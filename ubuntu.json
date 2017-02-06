@@ -76,7 +76,7 @@
       "properties": {
         "publicIPAllocationMethod": "[variables('publicIPAddressType')]",
         "dnsSettings": {
-          "domainNameLabel": "[concat(parameters('dnsLabelPrefix'),resourceGroup().name)]"
+          "domainNameLabel": "[concat(uniquestring(resourceGroup().id), parameters('dnsLabelPrefix')]"
         }
       }
     },
